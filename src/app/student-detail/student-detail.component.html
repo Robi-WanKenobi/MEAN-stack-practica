@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Detalles del estudiante</h1>
+  <div class="row">
+    <div class="col-md-12" style="padding: 15px">
+      <a [routerLink]="['/home']" class="btn btn-info">Atrás</a>
+      <a [routerLink]="['/student-edit', student._id]" class="btn btn-success">Editar</a>
+      <button class="btn btn-danger" type="button" (click)="deleteStudent(student._id)">Borrar</button>
+    </div>
+  </div>
+
+  <div class="well">
+    <dl class="list" style="padding-top: 30px">
+      <dt>Nombre</dt>
+      <dd>{{ student.nombre }}</dd>
+      <dt>Apellido</dt>
+      <dd>{{ student.apellido }}</dd>
+      <dt>Edad</dt>
+      <dd>{{ student.edad }}</dd>
+      <dt>Genero</dt>
+      <dd>{{ student.genero }}</dd>
+    </dl>
+  </div>
+
+  <h3>Asignaturas</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let s of student.asignaturas">
+      <td>{{ s.nombre }}</td>
+      <td>{{ s.tipo }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
