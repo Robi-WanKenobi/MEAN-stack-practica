@@ -25,4 +25,12 @@ export class SubjectDetailComponent implements OnInit {
       console.log(err);
     });
   }
+
+  deleteSubject(id) {
+    this.subjectService.deleteSubject(id).then((result) => {
+      this.router.navigate(['/home']);
+    }, (err) => {
+      console.log(err);
+    });
+  }
 }

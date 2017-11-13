@@ -8,33 +8,35 @@
     </div>
   </div>
 
-  <div class="well">
-    <dl class="list" style="padding-top: 30px">
-      <dt>Nombre</dt>
-      <dd>{{ student.nombre }}</dd>
-      <dt>Apellido</dt>
-      <dd>{{ student.apellido }}</dd>
-      <dt>Edad</dt>
-      <dd>{{ student.edad }}</dd>
-      <dt>Genero</dt>
-      <dd>{{ student.genero }}</dd>
-    </dl>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="well">
+        <h3 style="padding-bottom: 25px">Estudiante</h3>
+        <h4><strong>Nombre: </strong>{{ student.nombre }}</h4>
+        <h4><strong>Apellido: </strong>{{ student.apellido }}</h4>
+        <h4><strong>Edad: </strong>{{ student.edad }}</h4>
+        <h4><strong>Género: </strong>{{ student.genero }}</h4>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="well">
+      <h3>Asignaturas</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let s of student.asignaturas">
+          <td>{{ s.nombre }}</td>
+          <td>{{ s.tipo }}</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
   </div>
-
-  <h3>Asignaturas</h3>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Tipo</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let s of student.asignaturas">
-      <td>{{ s.nombre }}</td>
-      <td>{{ s.tipo }}</td>
-    </tr>
-    </tbody>
-  </table>
 
 </div>

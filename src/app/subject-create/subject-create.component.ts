@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {SubjectService} from "../subject.service";
+import { Router } from "@angular/router";
+import { SubjectService } from "../subject.service";
 
 @Component({
   selector: 'app-subject-create',

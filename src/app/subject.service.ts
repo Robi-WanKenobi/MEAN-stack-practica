@@ -24,7 +24,7 @@ export class SubjectService {
       this.http.get('/subject/' + id)
         .map(res => res.json())
         .subscribe(res => {
-          resolve(res)
+          resolve(res);
         }, (err) => {
           reject(err);
         });
@@ -55,6 +55,17 @@ export class SubjectService {
     });
   }
 
+  deleteSubject(id) {
+    return new Promise((resolve, reject) => {
+      this.http.delete('/subject/' + id)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
   deleteStudentFromSubject(id, idstudent) {
     return new Promise((resolve, reject) => {
       this.http.put('/subject/' + id + '/students/' + idstudent, null)
@@ -76,6 +87,7 @@ export class SubjectService {
         });
     });
   }
+
 }
 
 

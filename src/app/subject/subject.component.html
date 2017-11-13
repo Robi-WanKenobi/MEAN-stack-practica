@@ -4,22 +4,24 @@
   </a>
 </h1>
 
-<table class="table">
-  <thead>
-  <tr>
-    <th>Nombre</th>
-    <th>Tipo</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let subject of subjects">
-    <td>{{ subject.nombre }}</td>
-    <td>{{ subject.tipo }}</td>
-    <td align="right"><a [routerLink]="['/subject-details', subject._id]" class="btn btn-info btn-xs">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-    </a></td>
-  </tr>
-  </tbody>
-</table>
+<div class="well">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let subject of subjects">
+      <td>{{ subject.nombre }}</td>
+      <td>{{ subject.tipo }}</td>
+      <td align="right"><a [routerLink]="['/subject-details', subject._id]" class="btn btn-info btn-xs">
+        <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+      </a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
